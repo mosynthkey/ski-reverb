@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="color-scheme" content="light" />
+  <title>Ski Snow Reverb</title>
+  <meta name="description" content="A thin outdoor reverb. Highs sink into the snow." />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23d5e2ea'/%3E%3Cpath d='M16 6l1.2 6.2L23 14l-5.8 1.2L16 22l-1.2-6.8L9 14l5.8-1.8z' fill='%23f7f9fa'/%3E%3C/svg%3E" />
+</head>
+<body>
+  <main class="app">
+    <section class="stage" id="stage">
+      <canvas id="scene" width="800" height="480" aria-label="A quiet ski slope under a pale sky"></canvas>
+      <div class="stage-copy">
+        <p class="eyebrow">Outdoor reverb</p>
+        <h1>Ski Snow Reverb</h1>
+        <p class="lede">Cold air, a thin tail, highs lost to the snow.</p>
+      </div>
+      <p class="stage-hint" id="stageHint">Drop an audio file onto the slope</p>
+      <div class="dropveil">
+        <p>Release to load audio</p>
+      </div>
+    </section>
+
+    <section class="deck">
+      <div class="wave-wrap" id="waveWrap">
+        <canvas id="waveform" width="800" height="84" tabindex="0" role="slider" aria-label="Playback position" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-disabled="true"></canvas>
+        <p class="wave-empty" id="waveEmpty">Open an audio file to begin</p>
+      </div>
+      <div class="transport">
+        <div class="transport-buttons">
+          <button type="button" id="play" class="primary" disabled>Play</button>
+          <button type="button" id="pause" disabled>Pause</button>
+          <button type="button" id="stop" disabled>Stop</button>
+        </div>
+        <p class="time" id="time">0:00 / 0:00</p>
+        <button type="button" id="openFile">Open file</button>
+        <input id="file" type="file" accept="audio/*,.mp3,.wav,.wave,.ogg,.m4a,.aac,.flac,.aiff,.aif,.webm,.caf" hidden />
+        <p class="file-name" id="fileName">No file loaded</p>
+      </div>
+      <p class="status" id="status" role="status"></p>
+      <div class="knobs" id="knobs"></div>
+      <p class="privacy">Audio stays in this browser.</p>
+    </section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
